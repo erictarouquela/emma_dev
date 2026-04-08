@@ -5,7 +5,7 @@ Sistema integrado para gestão de marcações em tempo real, inscrições de alu
 ## 🛠 Stack Tecnológica
 
 - **Backend:** [Laravel 13](https://laravel.com/) (PHP 8.3)
-- **Frontend:** [React](https://reactjs.org/) via [Inertia.js](https://inertiajs.com/)
+- **Frontend:** [React](https://reactjs.org/)
 - **Base de Dados:** MySQL 8.0
 - **Cache/Queue:** Redis
 - **Estilização:** Tailwind CSS
