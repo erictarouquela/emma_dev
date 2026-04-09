@@ -37,7 +37,7 @@ export function AuthProvider({ children }) {
     }
     api.defaults.headers.common['Authorization'] = `Bearer ${token}`
     authApi.getUser()
-      .then((res) => setUser(res.data))
+      .then((res) => setUser(res.data.data ?? res.data))
       .catch(() => {
         // Token invalid/expired — clear auth state
         localStorage.removeItem('token')
@@ -49,7 +49,7 @@ export function AuthProvider({ children }) {
 
   async function login(email, password) {
     const res = await authApi.login(email, password)
-    const { token: newToken, user: newUser } = res.data
+    const { token: newToken, user: newUser } = res.data.data
     localStorage.setItem('token', newToken)
     api.defaults.headers.common['Authorization'] = `Bearer ${newToken}`
     setToken(newToken)
