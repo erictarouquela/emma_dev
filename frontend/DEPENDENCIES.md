@@ -17,7 +17,9 @@ npm install
 - **react-dom@^19.0.0** - Renderização React
 - **axios@^1.7.0** - Cliente HTTP
 - **react-hook-form@^7.51.0** - Gerenciamento de formulários
+- **@hookform/resolvers@^5.0.0** - Integracao React Hook Form + Zod
 - **zod@^3.22.0** - Validação de schema
+- **react-router-dom@^7.5.0** - Routing SPA (navegacao entre paginas)
 - **lucide-react@^0.408.0** - Ícones SVG
 
 ### Dev Dependencies
