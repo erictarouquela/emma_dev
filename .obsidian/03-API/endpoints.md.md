@@ -37,12 +37,32 @@ Autenticação do utilizador.
 }
 // Response 200
 {
-  "token": "sanctum_token",
-  "user": { "id": 1, "name": "João", "email": "user@email.com" }
+  "status": "success",
+  "data": {
+    "token": "5|Ox0vjv9rILGOX6aFkKhn81C8MyOUx9zwhmpvnBFY628a5c90",
+    "user": {
+      "id": 2,
+      "organization_id": 1,
+      "name": "Carlos Ribeiro",
+      "email": "carlosrib@gmail.com",
+      "email_verified_at": null,
+      "created_at": "2026-04-09T15:05:59.000000Z",
+      "updated_at": "2026-04-09T15:05:59.000000Z"
+    }
+  },
+  "message": "",
+  "meta": {}
 }
 // Response 422
-{ "message": "Credenciais inválidas" }
+{
+  "status": "error",
+  "message": "Credenciais inválidas",
+  "data": null,
+  "meta": {}
+}
 ```
+
+⚠️ **Importante para Frontend:** A resposta vem envelopada em `data`. Usar `res.data.data.token` e `res.data.data.user` para extrair os valores.
 
 ### POST /api/auth/logout 🔒
 Terminar sessão. Requer token.
@@ -51,10 +71,30 @@ Terminar sessão. Requer token.
 Obter dados do utilizador autenticado.
 ```json
 // Response 200
-{ "id": 1, "name": "João", "email": "user@email.com" }
+{
+  "status": "success",
+  "data": {
+    "id": 2,
+    "organization_id": 1,
+    "name": "Carlos Ribeiro",
+    "email": "carlosrib@gmail.com",
+    "email_verified_at": null,
+    "created_at": "2026-04-09T15:05:59.000000Z",
+    "updated_at": "2026-04-09T15:05:59.000000Z"
+  },
+  "message": "",
+  "meta": {}
+}
 // Response 401
-{ "message": "Unauthenticated." }
+{
+  "status": "error",
+  "message": "Unauthenticated.",
+  "data": null,
+  "meta": {}
+}
 ```
+
+⚠️ **Importante para Frontend:** A resposta vem envelopada em `data`. Usar `res.data.data` para extrair o objeto do utilizador.
 
 ---
 

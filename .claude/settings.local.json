@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm test:*)",
+      "Bash(echo \"EXIT_CODE: $?\")"
+    ]
+  }
+}
